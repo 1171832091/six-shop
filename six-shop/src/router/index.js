@@ -10,6 +10,7 @@ import RegisterRouter from './register'
 import LoginRouter from './login'
 import SearchRouter from './search'
 import ShopCartRouter from './shopCart'
+import addressRouter from './address'
 
 Vue.use(VueRouter)
 
@@ -26,7 +27,8 @@ const routes = [
     RegisterRouter,
     LoginRouter,
     SearchRouter,
-    ShopCartRouter
+    ShopCartRouter,
+    addressRouter
 ]
 
 const router = new VueRouter({

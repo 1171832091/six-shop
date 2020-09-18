@@ -26,6 +26,7 @@
 import Vue from "vue";
 import { NavBar, Button, Toast } from "vant";
 Vue.use(NavBar).use(Button).use(Toast);
+import {mapState , mapMutations} from 'vuex'
 export default {
   data() {
     return {
@@ -33,14 +34,8 @@ export default {
       password: "",
     };
   },
-  async mounted() {
-    let res = "http://10.9.70.187:3000/api/pros/detail";
-    let datalist = await axios.get(
-      res+'?proid=' + "pro_31b5cda0-22d8-11ea-a9d6-713133cd4ee0"
-    );
-    console.log(datalist);
-  },
   methods: {
+    ...mapMutations(['changUserState']),
     toLogin() {
       this.$axios
         .post("/api/users/login", {
@@ -62,6 +57,7 @@ export default {
             localStorage.setItem("token", res.data.data.token);
             localStorage.setItem("tel", res.data.data.tel);
             // this.changUserState();
+            this.$store.commit('changUserState',true)
             this.$router.push({ path: "/home" });
           }
         });

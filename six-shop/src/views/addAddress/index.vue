@@ -1,15 +1,81 @@
 <template>
-    <div>
-        添加地址
-    </div>
+  <div>
+    <van-nav-bar
+      title="注册"
+      left-text="返回"
+      right-text="帮助"
+      left-arrow
+      @click-left="onClickLeft"
+      @click-right="onClickRight"
+    />
+    <van-address-edit
+      :area-list="areaList"
+      show-postal
+      show-delete
+      show-set-default
+      name:uname
+      show-search-result
+      :search-result="searchResult"
+      :area-columns-placeholder="['请选择', '请选择', '请选择']"
+      @save="onSave"
+      @delete="onDelete"
+      @change-detail="onChangeDetail"
+    />
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "index"
-    }
+import Vue from "vue";
+import { AddressEdit, Toast, NavBar } from "vant";
+import areaList from "../../utils/areaList";
+Vue.use(AddressEdit).use(Toast).use(NavBar);
+export default {
+  data() {
+    return {
+      areaList,
+      con:"",
+      unaem:"1111",
+      searchResult: [],
+    };
+  },
+  methods: {
+    onClickLeft() {
+      this.$router.go(-1);
+    },
+    onClickRight() {
+      Toast({
+        message: "有事？",
+        icon:
+          "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4215493778,880544543&fm=26&gp=0.jpg",
+      });
+    },
+    onSave() {
+      console.log(this.con)
+      // console.log(this.AddressEdit)
+      console.log(this.searchResult)
+      Toast("save");
+    },
+    onDelete() {
+      Toast("delete");
+    },
+    onChangeDetail(val) {
+      if (val) {
+        this.searchResult = [
+          {
+            name: "黄龙万科中心",
+            address: "杭州市西湖区",
+          },
+        ];
+      } else {
+        this.searchResult = [];
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
-
+.van-cell {
+  padding: 11px 22px !important;
+}
 </style>
