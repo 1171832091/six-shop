@@ -22,29 +22,29 @@
 
 <script>
 import Vue from "vue";
-import { AddressList, Toast ,NavBar} from "vant";
-
+import { AddressList, Toast, NavBar } from "vant";
+import { mapState, mapMutations } from "vuex";
 Vue.use(AddressList).use(Toast).use(NavBar);
 
 export default {
   data() {
     return {
       chosenAddressId: "1",
-      list: [
-        {
-          id: "1",
-          name: "张三",
-          tel: "13000000000",
-          address: "浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室",
-          isDefault: true,
-        },
-        {
-          id: "2",
-          name: "李四",
-          tel: "1310000000",
-          address: "浙江省杭州市拱墅区莫干山路 50 号",
-        },
-      ],
+      // list: [
+      //   {
+      //     id: "1",
+      //     name: "张三",
+      //     tel: "13000000000",
+      //     address: "浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室",
+      //     isDefault: true,
+      //   },
+      //   {
+      //     id: "2",
+      //     name: "李四",
+      //     tel: "1310000000",
+      //     address: "浙江省杭州市拱墅区莫干山路 50 号",
+      //   },
+      // ],
       disabledList: [
         {
           id: "3",
@@ -55,9 +55,16 @@ export default {
       ],
     };
   },
+  computed: {
+    ...mapState(["addressList"]),
+  },
   methods: {
-      onClickLeft() {
+    // ...mapMutations(['changUserState']),
+    onClickLeft() {
       this.$router.go(-1);
+    },
+    getList() {
+      this.list= this.addressList
     },
     onClickRight() {
       Toast({
@@ -67,11 +74,14 @@ export default {
       });
     },
     onAdd() {
-        this.$router.push({path:"/addAddress"})
+      this.$router.push({ path: "/addAddress" });
     },
     onEdit(item, index) {
       Toast("编辑地址:" + index);
     },
+  },
+  created() {
+    this.getList()
   },
   mounted() {},
 };

@@ -28,17 +28,21 @@
 import Vue from "vue";
 import { AddressEdit, Toast, NavBar } from "vant";
 import areaList from "../../utils/areaList";
+import { mapState, mapMutations } from "vuex";
 Vue.use(AddressEdit).use(Toast).use(NavBar);
 export default {
   data() {
     return {
       areaList,
-      con:"",
-      unaem:"1111",
+      tel: "",
+      naem: "1111",
+      address: "",
       searchResult: [],
+      target: {},
     };
   },
   methods: {
+    ...mapMutations(["addAddress"]),
     onClickLeft() {
       this.$router.go(-1);
     },
@@ -49,11 +53,16 @@ export default {
           "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4215493778,880544543&fm=26&gp=0.jpg",
       });
     },
-    onSave() {
-      console.log(this.con)
-      // console.log(this.AddressEdit)
-      console.log(this.searchResult)
-      Toast("save");
+    onSave(content) {
+      console.log(content);
+      this.target.name = content.name;
+      this.target.tel = content.tel;
+      this.target.id = 3;
+      this.target.isDefault = content.isDefault;
+      this.target.address = content.province + content.city + content.county;
+      Toast.success("保存成功");
+      this.$store.commit("addAddress", this.target);
+      this.$router.go(-1);
     },
     onDelete() {
       Toast("delete");

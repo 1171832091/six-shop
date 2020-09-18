@@ -1,5 +1,5 @@
 export default {
-    path: '/detail',
+    path: '/detail/:proid',
     name: 'detail',
     component: () => import(/* webpackChunkName: "about" */ '../../views/detail'),
     meta:{

@@ -19,11 +19,11 @@ export default new Vuex.Store({
         name: "李四",
         tel: "1310000000",
         address: "浙江省杭州市拱墅区莫干山路 50 号",
+        isDefault: true,
       },
     ],
     disabledList: [
       {
-        id: "3",
         name: "王五",
         tel: "1320000000",
         address: "浙江省杭州市滨江区江南大道 15 号",
@@ -35,7 +35,8 @@ export default new Vuex.Store({
       state.userState=target
     },
     addAddress(state,target){
-      state.address.push(target)
+      state.addressList.push(target)
+      console.log(state.addressList)
     }
   },
   actions: {
