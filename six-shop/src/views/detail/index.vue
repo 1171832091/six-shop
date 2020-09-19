@@ -182,6 +182,7 @@ export default {
       this.$axios.post("/api/shopCart/insert", datas).then((res) => {
         console.log(res);
       });
+      this.$router.push({path:'/shopcart'})
     },
     getList() {
       this.getProid = this.$route.params.proid

@@ -86,7 +86,7 @@ export default {
     },
     sendTelCode() {
       this.$axios
-        .get("/api/users/sendCode?tel=" + this.telephone)
+        .get("http://10.9.70.187:3000/api/users/sendCode?tel=" + this.telephone)
         .then((res) => {
           console.log(res);
           if (Number(res.data.code) === 10001) {
@@ -116,7 +116,7 @@ export default {
             password: this.password,
             tel: this.telephone,
           };
-          this.$axios.post("/api/users/singup", data).then((res)=>{
+          this.$axios.post("http://10.9.70.187:3000/api/users/singup", data).then((res)=>{
               console.log(res)
               if(Number(res.data.code ) == 10002){
                   Toast.success('恭喜你注册成功')

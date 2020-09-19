@@ -1,0 +1,51 @@
+{
+  "id": "2072915",
+  "name": "shop",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "815878",
+      "name": "选择-勾选",
+      "font_class": "choosehandle",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "478765",
+      "name": "分类",
+      "font_class": "fenlei",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "1703545",
+      "name": "进入",
+      "font_class": "jinru",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "6560960",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "7093672",
+      "name": "个人中心",
+      "font_class": "gerenzhongxin",
+      "unicode": "e71d",
+      "unicode_decimal": 59165
+    },
+    {
+      "icon_id": "11519413",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e731",
+      "unicode_decimal": 59185
+    }
+  ]
+}

@@ -39,7 +39,7 @@ export default {
     toLogin() {
       // console.log(1111)
       this.$axios
-        .post("/api/users/login", {
+        .post("http://10.9.70.187:3000/api/users/login", {
           tel: this.tel,
           password: this.password,
         })

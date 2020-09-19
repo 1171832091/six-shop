@@ -44,15 +44,17 @@ const routes = [
         meta: {
             flag: false
         }
+    },
+    {
+        path: '/order',
+        name: 'order',
+        component: () => import('@/views/order'),
+        meta: {
+            flag: false
+        }
     }
 ]
 
-// router.beforeEach((to,from,next)=>{
-//     next()
-//     // if('/login' !== to.path){
-//     //     let token = localStorage.getItem('token')
-//     // }
-// })
 
 const router = new VueRouter({
     routes
@@ -62,7 +64,7 @@ router.beforeEach((to, from, next) => {
     if (Token) {
         next()
     } else {
-        if ('/login' == to.path) {
+        if ('/shopcart' != to.path) {
             next()
         } else {
             next('/login')
