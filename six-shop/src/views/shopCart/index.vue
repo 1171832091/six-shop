@@ -9,7 +9,7 @@
                     @click-right="onClickRight"
             />
         </div>
-        <div class="myAddress">
+        <div class="myAddress" @click="toAddress">
             <span>设置收货地址</span>
             <span class="iconfont icon-jinru"></span>
         </div>
@@ -25,7 +25,7 @@
                                 <img src="@/assets/icon/CheckedBoxActive.png" alt="" class="cartlists-content-left" v-if="item.checked == true" @click="addcart(index)">
                                 <img src="@/assets/icon/CheckedBox.png" alt="" class="cartlists-content-left" v-else @click="addcart(index)">
                             <div class="cartlist-content-img">
-                                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600321788028&di=6c72db62b467e8344e242eec883343f5&imgtype=0&src=http%3A%2F%2Fimage.biaobaiju.com%2Fuploads%2F20190807%2F13%2F1565155717-oeNKzkdHcS.jpg">
+                                <img :src="item.detail">
                             </div>
                             <div class="cartlist-content-right">
                                 <p class="name">{{item.brand}}</p>
@@ -97,6 +97,10 @@
 
         },
         methods: {
+
+            toAddress(){
+                this.$router.push({path:"/address"})
+            },
             onClickLeft() {
                 this.$router.go(-1)
             },
