@@ -3,6 +3,6 @@ export default {
     name: 'detail',
     component: () => import(/* webpackChunkName: "about" */ '../../views/detail'),
     meta:{
-        flag:true
+        flag:false
     }
 }

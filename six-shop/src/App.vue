@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <FooterBar></FooterBar>
+    <FooterBar v-if="$route.meta.flag"></FooterBar>
     <router-view/>
   </div>
 </template>

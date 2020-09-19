@@ -58,6 +58,7 @@ export default {
       this.target.name = content.name;
       this.target.tel = content.tel;
       this.target.id = 3;
+      this.target.checked = false;
       this.target.isDefault = content.isDefault;
       this.target.address = content.province + content.city + content.county;
       Toast.success("保存成功");

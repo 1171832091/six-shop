@@ -3,6 +3,6 @@ export default {
     name: 'register',
     component: () => import(/* webpackChunkName: "about" */ '@/views/register'),
     meta:{
-        flag:true
+        flag:false
     }
 }

@@ -3,6 +3,6 @@ export default {
     name: 'address',
     component: () => import(/* webpackChunkName: "about" */ '@/views/address'),
     meta:{
-        flag:true
+        flag:false
     }
 }

@@ -3,6 +3,6 @@ export default {
     name: 'addAddress',
     component: () => import(/* webpackChunkName: "about" */ '@/views/addAddress'),
     meta:{
-        flag:true
+        flag:false
     }
 }

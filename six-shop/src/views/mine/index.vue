@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <header id="header">
-      <div class="userinfo" v-if="this.user">
+      <div class="userinfo" v-if="this.user" @click="toMycneter" >
         <img
           src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2824339310,3696336994&fm=26&gp=0.jpg"
         />
@@ -35,7 +35,7 @@
           src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600419609973&di=edf1d9340dd06faaec3e0d071352ce1e&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201806%2F30%2F20180630013101_dumou.jpg"
         />
         <div>
-          <p>只要购物均可获得“刘诗诗”亲笔签名</p>
+          <p>只要购物均可获得“刘诗诗”亲笔签名照</p>
         </div>
       </div>
     </header>
@@ -275,6 +275,9 @@ export default {
     this.usernameM();
   },
   methods: {
+    toMycneter(){
+      this.$router.push({path:"/mycenter"})
+    },
     // ...mapMutations(["changUserState"]),
     // toCoupon() {
     //   this.$router.push("/coupon");

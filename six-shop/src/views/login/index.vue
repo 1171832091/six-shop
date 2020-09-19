@@ -37,6 +37,7 @@ export default {
   methods: {
     ...mapMutations(['changUserState']),
     toLogin() {
+      // console.log(1111)
       this.$axios
         .post("/api/users/login", {
           tel: this.tel,

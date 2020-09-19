@@ -143,7 +143,7 @@ export default {
     onClickLeft() {
       var l = confirm("主人真的不把宝贝带回家吗");
       if (l == true) {
-        this.$router.push("./home");
+        this.$router.go(-1);
       } else {
         alert("把喜爱的宝贝带回家吧!");
       }
@@ -151,7 +151,7 @@ export default {
     onClickRight() {
       var r = confirm("确定去寻找更多宝贝吗？");
       if (r == true) {
-        this.$router.push("./search");
+        this.$router.push("/search");
       } else {
         alert("主人还是舍不得人家呢!");
       }
@@ -160,22 +160,12 @@ export default {
       this.$router.push("service");
     },
     shopcart() {
-      this.$router.push("./shopCart");
+      this.$router.push("/shopCart");
     },
     onClickIcon() {
       Toast("店铺尚未开放参观");
     },
     buy() {
-      //   let datas = {
-      //     proid: this.datalist.proid,
-      //     num: 1,
-      //     tel: 15551353978,
-      //     type: this.datalist.type,
-      //     brand: this.datalist.brand,
-      //     proname: this.datalist.proname,
-      //     price: this.datalist.price,
-      //     detail: this.datalist.detail,
-      //   };
       this.tel = localStorage.getItem("tel");
       let datas = {
         proid: this.datalist.proid,
@@ -186,7 +176,7 @@ export default {
         proname: this.datalist.proname,
         price: this.datalist.price,
         detail: this.datalist.detail,
-        checked:1
+        checked:true
       };
       console.log(datas);
       this.$axios.post("/api/shopCart/insert", datas).then((res) => {

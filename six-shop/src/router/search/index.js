@@ -3,6 +3,6 @@ export default {
     name: 'search',
     component: () => import('@/views/search'),
     meta:{
-        flag:true
+        flag:false
     }
 }
