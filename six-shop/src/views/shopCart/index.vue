@@ -248,6 +248,7 @@
     padding: 7px;
     margin-top: 10px;
     background-color: white;
+    margin-bottom: 30px;
     border-bottom: 1px solid gainsboro;
 }
 .cartlists-box {
@@ -263,9 +264,10 @@
             background-color: white;
             border-radius: 10px;
             margin: 10px 0;
+            padding-top: 16px;
             /*background-color: aqua;*/
             margin-bottom: 20px;
-            min-height: 130px;
+            min-height: 150px;
             :nth-child(1){
                 width: 100%;
                 height: 100%;

@@ -52,6 +52,11 @@ const routes = [
         meta: {
             flag: false
         }
+    },
+    {
+        path: '*',
+        name: 'notfount',
+        component:  () => import('@/views/404'),
     }
 ]
 

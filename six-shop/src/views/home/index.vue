@@ -154,7 +154,7 @@ Vue.use(GridItem);
          this.$router.push(`/detail/${tatget}`)
        },
        qqq(tatget){
-         this.$router.push(`/list/${tatget}`)
+         this.$router.push(`/list`)
        },
          backTop () {
       const that = this

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="address">
     <van-nav-bar
       title="地址"
       left-text="返回"
@@ -20,7 +20,7 @@
     />
     <van-button
       class="saveBut"
-     @click="onSureqq"
+      @click="onSureqq"
       color="linear-gradient(to right, #ff6034, #ee0a24)"
     >确认地址</van-button>
   </div>
@@ -92,5 +92,8 @@ export default {
   position: relative;
   left: 38%;
   border-radius: 20px;
+}
+.address{
+  z-index: 1;
 }
 </style>

@@ -13,7 +13,7 @@
           <li class="cartlists-content" v-for="(item,index) in orderData" :key="index">
             <div class="cartlist-content-img">
               <img
-                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600321788028&di=6c72db62b467e8344e242eec883343f5&imgtype=0&src=http%3A%2F%2Fimage.biaobaiju.com%2Fuploads%2F20190807%2F13%2F1565155717-oeNKzkdHcS.jpg"
+                :src="item.detail"
               />
             </div>
             <div class="cartlist-content-right">
@@ -156,7 +156,8 @@ export default {
       this.coupons.push(coupon);
     },
     sub() {
-      Toast("哈哈哈哈哈哈哈哈哈哈");
+      Toast.success("恭喜你支付成功");
+      this.$router.push({path:"/home"})
     },
   },
   computed: {
@@ -320,6 +321,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 50px;
   span {
     display: flex;
     align-items: center;
